@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineBling</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+        <span class="logo-mine">MINE</span><span class="logo-bling">BLING</span>
+    </a>
+
+    <nav class="nav-links">
+        <button class="nav-item active" data-page="cases">CASES</button>
+        <button class="nav-item" data-page="wheel">WHEEL</button>
+        <button class="nav-item" data-page="slots">SLOTS</button>
+        <button class="nav-item" data-page="upgrader">UPGRADER</button>
+        <button class="nav-item" data-page="sell">SELL</button>
+        <button class="nav-item" data-page="stats">STATS</button>
+        <button class="nav-item" data-page="ranking">RANKING</button>
+    </nav>
+
+    <div class="nav-right">
+        <button class="settings">⚙</button>
+
+        <div class="balance">
+            <span class="balance-name">COINS</span>
+            <span id="balance">10,000.00</span>
+        </div>
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="live-bar">
+        <div class="live-status">
+            <span class="live-dot"></span>
+            <span>LIVE</span>
+        </div>
+
+        <span class="live-message">No big drops yet</span>
+    </section>
+
+
+    <section class="page active-page" id="cases">
+
+        <div class="section-heading">
+            <div>
+                <span class="small-title">MINEBLING</span>
+                <h1>Cases</h1>
+            </div>
+
+            <p>Open cases using virtual Coins.</p>
+        </div>
+
+
+        <div class="cases-layout">
+
+            <article class="featured-case">
+
+                <div class="featured-top">
+                    <span class="featured-badge">FEATURED</span>
+
+                    <h2>Dragon Case</h2>
+                    <p>up to x32.5</p>
+                </div>
+
+                <!-- TU PÓŹNIEJ DODAMY TWOJĄ GRAFIKĘ -->
+                <div class="image-placeholder featured-placeholder">
+                    <span>CASE IMAGE</span>
+                </div>
+
+                <button class="open-button" data-price="199.99">
+                    OPEN
+                    <span>199.99 COINS</span>
+                </button>
+
+            </article>
+
+
+            <div class="case-grid">
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Starter</h3>
+                    <p>up to x2.8</p>
+
+                    <button class="case-price" data-price="0.50">
+                        0.50 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Diamond</h3>
+                    <p>up to x6.2</p>
+
+                    <button class="case-price" data-price="2.49">
+                        2.49 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Gold</h3>
+                    <p>up to x12.6</p>
+
+                    <button class="case-price" data-price="5.99">
+                        5.99 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Obsidian</h3>
+                    <p>up to x18.4</p>
+
+                    <button class="case-price" data-price="9.99">
+                        9.99 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Emerald</h3>
+                    <p>up to x24.7</p>
+
+                    <button class="case-price" data-price="14.99">
+                        14.99 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Nether</h3>
+                    <p>up to x28.1</p>
+
+                    <button class="case-price" data-price="24.99">
+                        24.99 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>The End</h3>
+                    <p>up to x32.5</p>
+
+                    <button class="case-price" data-price="49.99">
+                        49.99 COINS
+                    </button>
+                </article>
+
+
+                <article class="case-card">
+                    <div class="image-placeholder">
+                        <span>IMAGE</span>
+                    </div>
+
+                    <h3>Legendary</h3>
+                    <p>up to x45.0</p>
+
+                    <button class="case-price" data-price="99.99">
+                        99.99 COINS
+                    </button>
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <section class="stats-row">
+
+            <div class="stat-card">
+                <span>BEST DROP</span>
+                <strong>0.00</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>CASES OPENED</span>
+                <strong id="casesOpened">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>UPGRADES WON</span>
+                <strong>0 / 0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>TOTAL PROFIT</span>
+                <strong>0.00</strong>
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <section class="page" id="wheel">
+        <div class="empty-page">
+            <h1>Wheel</h1>
+            <p>Coming later.</p>
+        </div>
+    </section>
+
+    <section class="page" id="slots">
+        <div class="empty-page">
+            <h1>Slots</h1>
+            <p>Coming later.</p>
+        </div>
+    </section>
+
+    <section class="page" id="upgrader">
+        <div class="empty-page">
+            <h1>Upgrader</h1>
+            <p>Coming later.</p>
+        </div>
+    </section>
+
+    <section class="page" id="sell">
+        <div class="empty-page">
+            <h1>Sell</h1>
+            <p>Coming later.</p>
+        </div>
+    </section>
+
+    <section class="page" id="stats">
+        <div class="empty-page">
+            <h1>Stats</h1>
+            <p>Coming later.</p>
+        </div>
+    </section>
+
+    <section class="page" id="ranking">
+        <div class="empty-page">
+            <h1>Ranking</h1>
+            <p>Coming later.</p>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
