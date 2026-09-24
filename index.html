@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MineBling</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,38 +32,77 @@
     </nav>
 
     <div class="nav-right">
-        <button class="settings">⚙</button>
 
-        <div class="balance">
-            <span class="balance-name">COINS</span>
-            <span id="balance">10,000.00</span>
+        <div id="guestButtons" class="guest-buttons">
+            <button id="loginOpen" class="login-button">
+                LOGIN
+            </button>
+
+            <button id="registerOpen" class="register-button">
+                REGISTER
+            </button>
         </div>
+
+
+        <div id="userArea" class="user-area hidden">
+
+            <div class="balance">
+                <span>COINS</span>
+                <strong id="balance">0.00</strong>
+            </div>
+
+            <button id="profileButton" class="profile-button">
+                <span id="usernameDisplay">Player</span>
+                <span class="profile-arrow">▼</span>
+            </button>
+
+            <div id="profileMenu" class="profile-menu hidden">
+
+                <div class="profile-menu-user">
+                    <span>LOGGED IN AS</span>
+                    <strong id="menuUsername">Player</strong>
+                </div>
+
+                <button id="logoutButton">
+                    LOGOUT
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
 
 </header>
 
 
+<div class="live-bar">
+    <div class="live-status">
+        <span class="live-dot"></span>
+        LIVE
+    </div>
+
+    <span>No big drops yet</span>
+</div>
+
+
 <main>
 
-    <section class="live-bar">
-        <div class="live-status">
-            <span class="live-dot"></span>
-            <span>LIVE</span>
-        </div>
+    <!-- ========================= -->
+    <!-- CASES -->
+    <!-- ========================= -->
 
-        <span class="live-message">No big drops yet</span>
-    </section>
-
-
-    <section class="page active-page" id="cases">
+    <section id="cases" class="page active-page">
 
         <div class="section-heading">
+
             <div>
                 <span class="small-title">MINEBLING</span>
                 <h1>Cases</h1>
             </div>
 
             <p>Open cases using virtual Coins.</p>
+
         </div>
 
 
@@ -70,19 +110,25 @@
 
             <article class="featured-case">
 
-                <div class="featured-top">
-                    <span class="featured-badge">FEATURED</span>
+                <div>
+                    <span class="featured-badge">
+                        FEATURED
+                    </span>
 
                     <h2>Dragon Case</h2>
+
                     <p>up to x32.5</p>
                 </div>
 
-                <!-- TU PÓŹNIEJ DODAMY TWOJĄ GRAFIKĘ -->
+
+                <!-- TWOJA GRAFIKA BĘDZIE TUTAJ -->
+
                 <div class="image-placeholder featured-placeholder">
-                    <span>CASE IMAGE</span>
+                    CASE IMAGE
                 </div>
 
-                <button class="open-button" data-price="199.99">
+
+                <button class="open-button">
                     OPEN
                     <span>199.99 COINS</span>
                 </button>
@@ -92,115 +138,140 @@
 
             <div class="case-grid">
 
+
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Starter</h3>
+
                     <p>up to x2.8</p>
 
-                    <button class="case-price" data-price="0.50">
+                    <button class="case-price">
                         0.50 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Diamond</h3>
+
                     <p>up to x6.2</p>
 
-                    <button class="case-price" data-price="2.49">
+                    <button class="case-price">
                         2.49 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Gold</h3>
+
                     <p>up to x12.6</p>
 
-                    <button class="case-price" data-price="5.99">
+                    <button class="case-price">
                         5.99 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Obsidian</h3>
+
                     <p>up to x18.4</p>
 
-                    <button class="case-price" data-price="9.99">
+                    <button class="case-price">
                         9.99 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Emerald</h3>
+
                     <p>up to x24.7</p>
 
-                    <button class="case-price" data-price="14.99">
+                    <button class="case-price">
                         14.99 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Nether</h3>
+
                     <p>up to x28.1</p>
 
-                    <button class="case-price" data-price="24.99">
+                    <button class="case-price">
                         24.99 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>The End</h3>
+
                     <p>up to x32.5</p>
 
-                    <button class="case-price" data-price="49.99">
+                    <button class="case-price">
                         49.99 COINS
                     </button>
+
                 </article>
 
 
                 <article class="case-card">
+
                     <div class="image-placeholder">
-                        <span>IMAGE</span>
+                        IMAGE
                     </div>
 
                     <h3>Legendary</h3>
+
                     <p>up to x45.0</p>
 
-                    <button class="case-price" data-price="99.99">
+                    <button class="case-price">
                         99.99 COINS
                     </button>
+
                 </article>
 
             </div>
@@ -212,7 +283,7 @@
 
             <div class="stat-card">
                 <span>BEST DROP</span>
-                <strong>0.00</strong>
+                <strong id="bestDrop">0.00</strong>
             </div>
 
             <div class="stat-card">
@@ -222,12 +293,12 @@
 
             <div class="stat-card">
                 <span>UPGRADES WON</span>
-                <strong>0 / 0</strong>
+                <strong id="upgradesWon">0 / 0</strong>
             </div>
 
             <div class="stat-card">
-                <span>TOTAL PROFIT</span>
-                <strong>0.00</strong>
+                <span>ACCOUNT</span>
+                <strong id="accountStatus">GUEST</strong>
             </div>
 
         </section>
@@ -235,42 +306,51 @@
     </section>
 
 
-    <section class="page" id="wheel">
+    <!-- ========================= -->
+    <!-- OTHER PAGES -->
+    <!-- ========================= -->
+
+    <section id="wheel" class="page">
         <div class="empty-page">
             <h1>Wheel</h1>
             <p>Coming later.</p>
         </div>
     </section>
 
-    <section class="page" id="slots">
+
+    <section id="slots" class="page">
         <div class="empty-page">
             <h1>Slots</h1>
             <p>Coming later.</p>
         </div>
     </section>
 
-    <section class="page" id="upgrader">
+
+    <section id="upgrader" class="page">
         <div class="empty-page">
             <h1>Upgrader</h1>
             <p>Coming later.</p>
         </div>
     </section>
 
-    <section class="page" id="sell">
+
+    <section id="sell" class="page">
         <div class="empty-page">
             <h1>Sell</h1>
             <p>Coming later.</p>
         </div>
     </section>
 
-    <section class="page" id="stats">
+
+    <section id="stats" class="page">
         <div class="empty-page">
             <h1>Stats</h1>
             <p>Coming later.</p>
         </div>
     </section>
 
-    <section class="page" id="ranking">
+
+    <section id="ranking" class="page">
         <div class="empty-page">
             <h1>Ranking</h1>
             <p>Coming later.</p>
@@ -279,6 +359,148 @@
 
 </main>
 
+
+<!-- ========================= -->
+<!-- AUTH MODAL -->
+<!-- ========================= -->
+
+<div id="authModal" class="modal hidden">
+
+    <div class="modal-overlay"></div>
+
+    <div class="auth-box">
+
+        <button id="closeModal" class="close-modal">
+            ×
+        </button>
+
+
+        <div class="auth-logo">
+            <span>MINE</span><strong>BLING</strong>
+        </div>
+
+
+        <div class="auth-tabs">
+
+            <button
+                id="loginTab"
+                class="auth-tab active"
+            >
+                LOGIN
+            </button>
+
+            <button
+                id="registerTab"
+                class="auth-tab"
+            >
+                REGISTER
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <form id="loginForm" class="auth-form">
+
+            <label>
+                EMAIL
+
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                >
+            </label>
+
+
+            <label>
+                PASSWORD
+
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="Your password"
+                    required
+                >
+            </label>
+
+
+            <button class="auth-submit" type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+
+        <!-- REGISTER -->
+
+        <form id="registerForm" class="auth-form hidden">
+
+            <label>
+                USERNAME
+
+                <input
+                    id="registerUsername"
+                    type="text"
+                    minlength="3"
+                    maxlength="20"
+                    placeholder="Player123"
+                    required
+                >
+            </label>
+
+
+            <label>
+                EMAIL
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                >
+            </label>
+
+
+            <label>
+                PASSWORD
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    minlength="6"
+                    placeholder="Minimum 6 characters"
+                    required
+                >
+            </label>
+
+
+            <div class="starter-coins">
+                NEW ACCOUNT BONUS
+
+                <strong>
+                    100 COINS
+                </strong>
+            </div>
+
+
+            <button class="auth-submit" type="submit">
+                CREATE ACCOUNT
+            </button>
+
+        </form>
+
+
+        <p id="authMessage" class="auth-message"></p>
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 
 </body>
