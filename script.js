@@ -1,6 +1,7 @@
-// ==========================================
-// MINEBLING + SUPABASE
-// ==========================================
+// ============================================
+// MINEBLING
+// SUPABASE
+// ============================================
 
 const SUPABASE_URL =
     "https://guunztesvywkqvqivkrp.supabase.co";
@@ -16,9 +17,9 @@ const supabaseClient =
     );
 
 
-// ==========================================
+// ============================================
 // ELEMENTS
-// ==========================================
+// ============================================
 
 const guestButtons =
     document.getElementById("guestButtons");
@@ -38,22 +39,23 @@ const menuUsername =
 const accountStatus =
     document.getElementById("accountStatus");
 
-const casesOpened =
+const casesOpenedElement =
     document.getElementById("casesOpened");
 
-const bestDrop =
+const bestDropElement =
     document.getElementById("bestDrop");
 
-const upgradesWon =
+const upgradesWonElement =
     document.getElementById("upgradesWon");
 
+
+// AUTH
 
 const authModal =
     document.getElementById("authModal");
 
 const authMessage =
     document.getElementById("authMessage");
-
 
 const loginOpen =
     document.getElementById("loginOpen");
@@ -64,13 +66,11 @@ const registerOpen =
 const closeModal =
     document.getElementById("closeModal");
 
-
 const loginTab =
     document.getElementById("loginTab");
 
 const registerTab =
     document.getElementById("registerTab");
-
 
 const loginForm =
     document.getElementById("loginForm");
@@ -78,6 +78,8 @@ const loginForm =
 const registerForm =
     document.getElementById("registerForm");
 
+
+// PROFILE
 
 const profileButton =
     document.getElementById("profileButton");
@@ -89,9 +91,9 @@ const logoutButton =
     document.getElementById("logoutButton");
 
 
-// ==========================================
+// ============================================
 // NAVIGATION
-// ==========================================
+// ============================================
 
 const navItems =
     document.querySelectorAll(".nav-item");
@@ -102,47 +104,88 @@ const pages =
 
 navItems.forEach(item => {
 
-    item.addEventListener("click", () => {
+    item.addEventListener(
+        "click",
+        () => {
 
-        const pageName =
-            item.dataset.page;
+            const pageName =
+                item.dataset.page;
 
-        navItems.forEach(nav => {
-            nav.classList.remove("active");
-        });
 
-        pages.forEach(page => {
-            page.classList.remove("active-page");
-        });
+            navItems.forEach(nav => {
 
-        item.classList.add("active");
+                nav.classList.remove(
+                    "active"
+                );
 
-        const page =
-            document.getElementById(pageName);
+            });
 
-        if (page) {
-            page.classList.add("active-page");
+
+            pages.forEach(page => {
+
+                page.classList.remove(
+                    "active-page"
+                );
+
+            });
+
+
+            item.classList.add(
+                "active"
+            );
+
+
+            const selectedPage =
+                document.getElementById(
+                    pageName
+                );
+
+
+            if (selectedPage) {
+
+                selectedPage.classList.add(
+                    "active-page"
+                );
+
+            }
+
         }
-
-    });
+    );
 
 });
 
 
-// ==========================================
+// ============================================
 // AUTH MODAL
-// ==========================================
+// ============================================
 
-function openAuth(mode) {
-
-    authModal.classList.remove("hidden");
+function resetAuthMessage() {
 
     authMessage.textContent = "";
 
+    authMessage.style.color =
+        "#ff6878";
+
+}
+
+
+function openAuth(mode) {
+
+    authModal.classList.remove(
+        "hidden"
+    );
+
+    resetAuthMessage();
+
+
     if (mode === "register") {
+
         showRegister();
+
     } else {
+
         showLogin();
+
     }
 
 }
@@ -150,44 +193,80 @@ function openAuth(mode) {
 
 function closeAuth() {
 
-    authModal.classList.add("hidden");
+    authModal.classList.add(
+        "hidden"
+    );
 
-    authMessage.textContent = "";
+    resetAuthMessage();
 
 }
 
 
 function showLogin() {
 
-    loginTab.classList.add("active");
-    registerTab.classList.remove("active");
+    loginTab.classList.add(
+        "active"
+    );
 
-    loginForm.classList.remove("hidden");
-    registerForm.classList.add("hidden");
+    registerTab.classList.remove(
+        "active"
+    );
+
+
+    loginForm.classList.remove(
+        "hidden"
+    );
+
+    registerForm.classList.add(
+        "hidden"
+    );
 
 }
 
 
 function showRegister() {
 
-    registerTab.classList.add("active");
-    loginTab.classList.remove("active");
+    registerTab.classList.add(
+        "active"
+    );
 
-    registerForm.classList.remove("hidden");
-    loginForm.classList.add("hidden");
+    loginTab.classList.remove(
+        "active"
+    );
+
+
+    registerForm.classList.remove(
+        "hidden"
+    );
+
+    loginForm.classList.add(
+        "hidden"
+    );
 
 }
 
 
+// ============================================
+// AUTH BUTTONS
+// ============================================
+
 loginOpen.addEventListener(
     "click",
-    () => openAuth("login")
+    () => {
+
+        openAuth("login");
+
+    }
 );
 
 
 registerOpen.addEventListener(
     "click",
-    () => openAuth("register")
+    () => {
+
+        openAuth("register");
+
+    }
 );
 
 
@@ -217,9 +296,9 @@ registerTab.addEventListener(
 );
 
 
-// ==========================================
+// ============================================
 // REGISTER
-// ==========================================
+// ============================================
 
 registerForm.addEventListener(
     "submit",
@@ -227,27 +306,37 @@ registerForm.addEventListener(
 
         event.preventDefault();
 
-        authMessage.textContent =
-            "Creating account...";
+
+        resetAuthMessage();
 
 
         const username =
             document
-                .getElementById("registerUsername")
+                .getElementById(
+                    "registerUsername"
+                )
                 .value
                 .trim();
+
 
         const email =
             document
-                .getElementById("registerEmail")
+                .getElementById(
+                    "registerEmail"
+                )
                 .value
                 .trim();
 
+
         const password =
             document
-                .getElementById("registerPassword")
+                .getElementById(
+                    "registerPassword"
+                )
                 .value;
 
+
+        // USERNAME VALIDATION
 
         if (
             username.length < 3 ||
@@ -258,75 +347,110 @@ registerForm.addEventListener(
                 "Username must have 3-20 characters.";
 
             return;
+
         }
 
 
-        const { data, error } =
-            await supabaseClient.auth.signUp({
+        // SIMPLE USERNAME FORMAT
 
-                email: email,
+        const usernameRegex =
+            /^[a-zA-Z0-9_]+$/;
 
-                password: password,
 
-                options: {
+        if (
+            !usernameRegex.test(
+                username
+            )
+        ) {
 
-                    data: {
-                        username: username
+            authMessage.textContent =
+                "Use only letters, numbers and _";
+
+            return;
+
+        }
+
+
+        authMessage.style.color =
+            "#9da3ad";
+
+        authMessage.textContent =
+            "Creating account...";
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+                .auth
+                .signUp({
+
+                    email: email,
+
+                    password: password,
+
+                    options: {
+
+                        data: {
+                            username: username
+                        }
+
                     }
 
-                }
-
-            });
+                });
 
 
         if (error) {
+
+            authMessage.style.color =
+                "#ff6878";
 
             authMessage.textContent =
                 error.message;
 
             return;
-        }
 
-
-        /*
-        Jeśli Supabase ma włączone
-        potwierdzanie emaila, session
-        będzie puste do momentu
-        potwierdzenia maila.
-        */
-
-        if (!data.session) {
-
-            authMessage.style.color =
-                "#aaff00";
-
-            authMessage.textContent =
-                "Account created! Check your email.";
-
-            return;
         }
 
 
         authMessage.style.color =
             "#aaff00";
 
+
+        if (!data.session) {
+
+            authMessage.textContent =
+                "Account created. Confirm your email.";
+
+            return;
+
+        }
+
+
         authMessage.textContent =
             "Account created!";
 
 
-        setTimeout(() => {
+        registerForm.reset();
 
-            closeAuth();
 
-        }, 700);
+        setTimeout(
+            () => {
+
+                closeAuth();
+
+            },
+            600
+        );
 
     }
 );
 
 
-// ==========================================
+// ============================================
 // LOGIN
-// ==========================================
+// ============================================
 
 loginForm.addEventListener(
     "submit",
@@ -334,27 +458,39 @@ loginForm.addEventListener(
 
         event.preventDefault();
 
+
+        resetAuthMessage();
+
+
+        const email =
+            document
+                .getElementById(
+                    "loginEmail"
+                )
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById(
+                    "loginPassword"
+                )
+                .value;
+
+
         authMessage.style.color =
-            "#ff6878";
+            "#9da3ad";
 
         authMessage.textContent =
             "Logging in...";
 
 
-        const email =
-            document
-                .getElementById("loginEmail")
-                .value
-                .trim();
-
-        const password =
-            document
-                .getElementById("loginPassword")
-                .value;
-
-
-        const { error } =
-            await supabaseClient.auth
+        const {
+            error
+        } =
+            await supabaseClient
+                .auth
                 .signInWithPassword({
 
                     email: email,
@@ -366,10 +502,14 @@ loginForm.addEventListener(
 
         if (error) {
 
+            authMessage.style.color =
+                "#ff6878";
+
             authMessage.textContent =
                 "Invalid email or password.";
 
             return;
+
         }
 
 
@@ -380,23 +520,32 @@ loginForm.addEventListener(
             "Logged in!";
 
 
-        setTimeout(() => {
+        loginForm.reset();
 
-            closeAuth();
 
-        }, 500);
+        setTimeout(
+            () => {
+
+                closeAuth();
+
+            },
+            500
+        );
 
     }
 );
 
 
-// ==========================================
-// GET PROFILE
-// ==========================================
+// ============================================
+// LOAD PROFILE
+// ============================================
 
 async function loadProfile(user) {
 
-    const { data, error } =
+    const {
+        data,
+        error
+    } =
         await supabaseClient
             .from("profiles")
             .select(`
@@ -407,42 +556,55 @@ async function loadProfile(user) {
                 upgrades_won,
                 upgrades_total
             `)
-            .eq("id", user.id)
+            .eq(
+                "id",
+                user.id
+            )
             .single();
 
 
     if (error) {
 
         console.error(
-            "Profile error:",
+            "PROFILE ERROR:",
             error
         );
 
         return;
+
     }
 
 
-    usernameDisplay.textContent =
+    const username =
         data.username || "Player";
 
+
+    usernameDisplay.textContent =
+        username;
+
+
     menuUsername.textContent =
-        data.username || "Player";
+        username;
 
 
     balanceElement.textContent =
-        Number(data.coins).toFixed(2);
+        Number(
+            data.coins
+        ).toFixed(2);
 
 
-    casesOpened.textContent =
-        data.cases_opened;
+    casesOpenedElement.textContent =
+        data.cases_opened ?? 0;
 
 
-    bestDrop.textContent =
-        Number(data.best_drop).toFixed(2);
+    bestDropElement.textContent =
+        Number(
+            data.best_drop ?? 0
+        ).toFixed(2);
 
 
-    upgradesWon.textContent =
-        `${data.upgrades_won} / ${data.upgrades_total}`;
+    upgradesWonElement.textContent =
+        `${data.upgrades_won ?? 0} / ${data.upgrades_total ?? 0}`;
 
 
     accountStatus.textContent =
@@ -451,16 +613,19 @@ async function loadProfile(user) {
 }
 
 
-// ==========================================
+// ============================================
 // AUTH UI
-// ==========================================
+// ============================================
 
 async function updateAuthUI() {
 
     const {
-        data: { session }
+        data: {
+            session
+        }
     } =
-        await supabaseClient.auth
+        await supabaseClient
+            .auth
             .getSession();
 
 
@@ -470,20 +635,25 @@ async function updateAuthUI() {
             "hidden"
         );
 
+
         userArea.classList.add(
             "hidden"
         );
 
+
         accountStatus.textContent =
             "GUEST";
 
+
         return;
+
     }
 
 
     guestButtons.classList.add(
         "hidden"
     );
+
 
     userArea.classList.remove(
         "hidden"
@@ -497,42 +667,57 @@ async function updateAuthUI() {
 }
 
 
-// ==========================================
-// AUTH STATE CHANGES
-// ==========================================
+// ============================================
+// AUTH CHANGES
+// ============================================
 
-supabaseClient.auth
+supabaseClient
+    .auth
     .onAuthStateChange(
         (event, session) => {
 
             if (session) {
 
-                guestButtons.classList.add(
-                    "hidden"
-                );
-
-                userArea.classList.remove(
-                    "hidden"
-                );
-
-
-                setTimeout(() => {
-
-                    loadProfile(
-                        session.user
+                guestButtons
+                    .classList
+                    .add(
+                        "hidden"
                     );
 
-                }, 0);
+
+                userArea
+                    .classList
+                    .remove(
+                        "hidden"
+                    );
+
+
+                setTimeout(
+                    () => {
+
+                        loadProfile(
+                            session.user
+                        );
+
+                    },
+                    0
+                );
 
             } else {
 
-                guestButtons.classList.remove(
-                    "hidden"
-                );
+                guestButtons
+                    .classList
+                    .remove(
+                        "hidden"
+                    );
 
-                userArea.classList.add(
-                    "hidden"
-                );
+
+                userArea
+                    .classList
+                    .add(
+                        "hidden"
+                    );
+
 
                 accountStatus.textContent =
                     "GUEST";
@@ -543,85 +728,157 @@ supabaseClient.auth
     );
 
 
-// ==========================================
+// ============================================
 // PROFILE MENU
-// ==========================================
+// ============================================
 
 profileButton.addEventListener(
     "click",
-    () => {
+    event => {
 
-        profileMenu.classList.toggle(
-            "hidden"
-        );
+        event.stopPropagation();
+
+
+        profileMenu
+            .classList
+            .toggle(
+                "hidden"
+            );
 
     }
 );
 
 
-// ==========================================
+document.addEventListener(
+    "click",
+    event => {
+
+        if (
+            !profileMenu.contains(
+                event.target
+            ) &&
+            !profileButton.contains(
+                event.target
+            )
+        ) {
+
+            profileMenu
+                .classList
+                .add(
+                    "hidden"
+                );
+
+        }
+
+    }
+);
+
+
+// ============================================
 // LOGOUT
-// ==========================================
+// ============================================
 
 logoutButton.addEventListener(
     "click",
     async () => {
 
-        await supabaseClient.auth
+        await supabaseClient
+            .auth
             .signOut();
 
-        profileMenu.classList.add(
-            "hidden"
-        );
+
+        profileMenu
+            .classList
+            .add(
+                "hidden"
+            );
 
     }
 );
 
 
-// ==========================================
-// DISABLE CASE OPENING FOR NOW
-// ==========================================
+// ============================================
+// CASE BUTTONS
+// ============================================
 
-document
-    .querySelectorAll(
+const caseButtons =
+    document.querySelectorAll(
         ".case-price, .open-button"
-    )
-    .forEach(button => {
+    );
+
+
+caseButtons.forEach(
+    button => {
 
         button.addEventListener(
             "click",
             async () => {
 
                 const {
-                    data: { session }
+                    data: {
+                        session
+                    }
                 } =
-                    await supabaseClient.auth
+                    await supabaseClient
+                        .auth
                         .getSession();
 
 
+                // LOGIN REQUIRED
+
                 if (!session) {
 
-                    openAuth("login");
+                    openAuth(
+                        "login"
+                    );
+
 
                     authMessage.textContent =
                         "Login to open cases.";
 
                     return;
+
                 }
 
 
+                const caseName =
+                    button.dataset.case;
+
+
+                console.log(
+                    "Selected case:",
+                    caseName
+                );
+
+
+                /*
+                ==================================
+                NEXT STEP:
+
+                tutaj dodamy:
+
+                1. ekran otwierania skrzynki
+                2. listę dropów
+                3. animację przewijania
+                4. losowanie po stronie Supabase
+                5. odejmowanie Coins
+                6. inventory
+                ==================================
+                */
+
                 alert(
-                    "Case opening will be added next!"
+                    `${caseName.toUpperCase()} CASE - opening system coming next!`
                 );
 
             }
         );
 
-    });
+    }
+);
 
 
-// ==========================================
+// ============================================
 // START
-// ==========================================
+// ============================================
 
 updateAuthUI();
