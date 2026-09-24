@@ -8,12 +8,17 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header class="navbar">
 
@@ -22,18 +27,44 @@
     </a>
 
     <nav class="nav-links">
-        <button class="nav-item active" data-page="cases">CASES</button>
-        <button class="nav-item" data-page="wheel">WHEEL</button>
-        <button class="nav-item" data-page="slots">SLOTS</button>
-        <button class="nav-item" data-page="upgrader">UPGRADER</button>
-        <button class="nav-item" data-page="sell">SELL</button>
-        <button class="nav-item" data-page="stats">STATS</button>
-        <button class="nav-item" data-page="ranking">RANKING</button>
+
+        <button class="nav-item active" data-page="cases">
+            CASES
+        </button>
+
+        <button class="nav-item" data-page="wheel">
+            WHEEL
+        </button>
+
+        <button class="nav-item" data-page="slots">
+            SLOTS
+        </button>
+
+        <button class="nav-item" data-page="upgrader">
+            UPGRADER
+        </button>
+
+        <button class="nav-item" data-page="sell">
+            SELL
+        </button>
+
+        <button class="nav-item" data-page="stats">
+            STATS
+        </button>
+
+        <button class="nav-item" data-page="ranking">
+            RANKING
+        </button>
+
     </nav>
+
 
     <div class="nav-right">
 
+        <!-- GUEST -->
+
         <div id="guestButtons" class="guest-buttons">
+
             <button id="loginOpen" class="login-button">
                 LOGIN
             </button>
@@ -41,26 +72,50 @@
             <button id="registerOpen" class="register-button">
                 REGISTER
             </button>
+
         </div>
 
+
+        <!-- LOGGED USER -->
 
         <div id="userArea" class="user-area hidden">
 
             <div class="balance">
+
                 <span>COINS</span>
-                <strong id="balance">0.00</strong>
+
+                <strong id="balance">
+                    0.00
+                </strong>
+
             </div>
 
+
             <button id="profileButton" class="profile-button">
-                <span id="usernameDisplay">Player</span>
-                <span class="profile-arrow">▼</span>
+
+                <span id="usernameDisplay">
+                    Player
+                </span>
+
+                <span class="profile-arrow">
+                    ▼
+                </span>
+
             </button>
+
 
             <div id="profileMenu" class="profile-menu hidden">
 
                 <div class="profile-menu-user">
-                    <span>LOGGED IN AS</span>
-                    <strong id="menuUsername">Player</strong>
+
+                    <span>
+                        LOGGED IN AS
+                    </span>
+
+                    <strong id="menuUsername">
+                        Player
+                    </strong>
+
                 </div>
 
                 <button id="logoutButton">
@@ -76,297 +131,582 @@
 </header>
 
 
+<!-- =========================
+     LIVE BAR
+========================= -->
+
 <div class="live-bar">
+
     <div class="live-status">
+
         <span class="live-dot"></span>
+
         LIVE
+
     </div>
 
-    <span>No big drops yet</span>
+    <span class="live-message">
+        No big drops yet
+    </span>
+
 </div>
 
 
+<!-- =========================
+     MAIN
+========================= -->
+
 <main>
 
-    <!-- ========================= -->
-    <!-- CASES -->
-    <!-- ========================= -->
 
-    <section id="cases" class="page active-page">
+<!-- =========================
+     CASES PAGE
+========================= -->
 
-        <div class="section-heading">
+<section id="cases" class="page active-page">
 
-            <div>
-                <span class="small-title">MINEBLING</span>
-                <h1>Cases</h1>
-            </div>
 
-            <p>Open cases using virtual Coins.</p>
+    <div class="section-heading">
+
+        <div>
+
+            <span class="small-title">
+                MINEBLING
+            </span>
+
+            <h1>
+                Cases
+            </h1>
 
         </div>
 
+        <p>
+            Open cases using virtual Coins.
+        </p>
 
-        <div class="cases-layout">
+    </div>
 
-            <article class="featured-case">
 
-                <div>
-                    <span class="featured-badge">
-                        FEATURED
-                    </span>
 
-                    <h2>Dragon Case</h2>
+    <div class="cases-layout">
 
-                    <p>up to x32.5</p>
+
+        <!-- =====================
+             DRAGON CASE
+        ====================== -->
+
+        <article class="featured-case">
+
+            <div class="featured-info">
+
+                <span class="featured-badge">
+                    FEATURED
+                </span>
+
+                <h2>
+                    Dragon Case
+                </h2>
+
+                <p>
+                    Legendary rewards
+                </p>
+
+            </div>
+
+
+            <div class="featured-image-box">
+
+                <img
+                    src="dragon_case.png"
+                    alt="Dragon Case"
+                    class="featured-case-image"
+                >
+
+            </div>
+
+
+            <button
+                class="open-button"
+                data-case="dragon"
+                data-price="100"
+            >
+
+                OPEN
+
+                <span>
+                    100 COINS
+                </span>
+
+            </button>
+
+        </article>
+
+
+
+        <!-- =====================
+             CASE GRID
+        ====================== -->
+
+        <div class="case-grid">
+
+
+            <!-- STARTER -->
+
+            <article class="case-card">
+
+                <div class="case-image-box">
+
+                    <img
+                        src="starter_case.png"
+                        alt="Starter Case"
+                        class="case-image"
+                    >
+
                 </div>
 
+                <h3>
+                    Starter Case
+                </h3>
 
-                <!-- TWOJA GRAFIKA BĘDZIE TUTAJ -->
+                <p>
+                    Basic drops
+                </p>
 
-                <div class="image-placeholder featured-placeholder">
-                    CASE IMAGE
-                </div>
-
-
-                <button class="open-button">
-                    OPEN
-                    <span>199.99 COINS</span>
+                <button
+                    class="case-price"
+                    data-case="starter"
+                    data-price="5"
+                >
+                    OPEN • 5 COINS
                 </button>
 
             </article>
 
 
-            <div class="case-grid">
+
+            <!-- MINER -->
+
+            <article class="case-card">
+
+                <div class="case-image-box">
+
+                    <img
+                        src="miner_case.png"
+                        alt="Miner Case"
+                        class="case-image"
+                    >
+
+                </div>
+
+                <h3>
+                    Miner Case
+                </h3>
+
+                <p>
+                    Mining drops
+                </p>
+
+                <button
+                    class="case-price"
+                    data-case="miner"
+                    data-price="10"
+                >
+                    OPEN • 10 COINS
+                </button>
+
+            </article>
 
 
-                <article class="case-card">
 
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
+            <!-- CAVE -->
 
-                    <h3>Starter</h3>
+            <article class="case-card">
 
-                    <p>up to x2.8</p>
+                <div class="case-image-box">
 
-                    <button class="case-price">
-                        0.50 COINS
-                    </button>
+                    <img
+                        src="cave_case.png"
+                        alt="Cave Case"
+                        class="case-image"
+                    >
 
-                </article>
+                </div>
 
+                <h3>
+                    Cave Case
+                </h3>
 
-                <article class="case-card">
+                <p>
+                    Underground drops
+                </p>
 
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
+                <button
+                    class="case-price"
+                    data-case="cave"
+                    data-price="15"
+                >
+                    OPEN • 15 COINS
+                </button>
 
-                    <h3>Diamond</h3>
-
-                    <p>up to x6.2</p>
-
-                    <button class="case-price">
-                        2.49 COINS
-                    </button>
-
-                </article>
-
-
-                <article class="case-card">
-
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
-
-                    <h3>Gold</h3>
-
-                    <p>up to x12.6</p>
-
-                    <button class="case-price">
-                        5.99 COINS
-                    </button>
-
-                </article>
+            </article>
 
 
-                <article class="case-card">
 
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
+            <!-- MOB -->
 
-                    <h3>Obsidian</h3>
+            <article class="case-card">
 
-                    <p>up to x18.4</p>
+                <div class="case-image-box">
 
-                    <button class="case-price">
-                        9.99 COINS
-                    </button>
+                    <img
+                        src="mob_case.png"
+                        alt="Mob Case"
+                        class="case-image"
+                    >
 
-                </article>
+                </div>
 
+                <h3>
+                    Mob Case
+                </h3>
 
-                <article class="case-card">
+                <p>
+                    Mob drops
+                </p>
 
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
+                <button
+                    class="case-price"
+                    data-case="mob"
+                    data-price="20"
+                >
+                    OPEN • 20 COINS
+                </button>
 
-                    <h3>Emerald</h3>
-
-                    <p>up to x24.7</p>
-
-                    <button class="case-price">
-                        14.99 COINS
-                    </button>
-
-                </article>
-
-
-                <article class="case-card">
-
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
-
-                    <h3>Nether</h3>
-
-                    <p>up to x28.1</p>
-
-                    <button class="case-price">
-                        24.99 COINS
-                    </button>
-
-                </article>
+            </article>
 
 
-                <article class="case-card">
 
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
+            <!-- NETHER -->
 
-                    <h3>The End</h3>
+            <article class="case-card">
 
-                    <p>up to x32.5</p>
+                <div class="case-image-box">
 
-                    <button class="case-price">
-                        49.99 COINS
-                    </button>
+                    <img
+                        src="nether_case.png"
+                        alt="Nether Case"
+                        class="case-image"
+                    >
 
-                </article>
+                </div>
+
+                <h3>
+                    Nether Case
+                </h3>
+
+                <p>
+                    Nether drops
+                </p>
+
+                <button
+                    class="case-price"
+                    data-case="nether"
+                    data-price="30"
+                >
+                    OPEN • 30 COINS
+                </button>
+
+            </article>
 
 
-                <article class="case-card">
 
-                    <div class="image-placeholder">
-                        IMAGE
-                    </div>
+            <!-- OCEAN -->
 
-                    <h3>Legendary</h3>
+            <article class="case-card">
 
-                    <p>up to x45.0</p>
+                <div class="case-image-box">
 
-                    <button class="case-price">
-                        99.99 COINS
-                    </button>
+                    <img
+                        src="ocean_case.png"
+                        alt="Ocean Case"
+                        class="case-image"
+                    >
 
-                </article>
+                </div>
 
-            </div>
+                <h3>
+                    Ocean Case
+                </h3>
+
+                <p>
+                    Ocean drops
+                </p>
+
+                <button
+                    class="case-price"
+                    data-case="ocean"
+                    data-price="40"
+                >
+                    OPEN • 40 COINS
+                </button>
+
+            </article>
+
+
+
+            <!-- END -->
+
+            <article class="case-card">
+
+                <div class="case-image-box">
+
+                    <img
+                        src="end_case.png"
+                        alt="End Case"
+                        class="case-image"
+                    >
+
+                </div>
+
+                <h3>
+                    End Case
+                </h3>
+
+                <p>
+                    End rewards
+                </p>
+
+                <button
+                    class="case-price"
+                    data-case="end"
+                    data-price="60"
+                >
+                    OPEN • 60 COINS
+                </button>
+
+            </article>
+
+
+
+            <!-- ANCIENT -->
+
+            <article class="case-card">
+
+                <div class="case-image-box">
+
+                    <img
+                        src="ancient_case.png"
+                        alt="Ancient Case"
+                        class="case-image"
+                    >
+
+                </div>
+
+                <h3>
+                    Ancient Case
+                </h3>
+
+                <p>
+                    Ancient rewards
+                </p>
+
+                <button
+                    class="case-price"
+                    data-case="ancient"
+                    data-price="80"
+                >
+                    OPEN • 80 COINS
+                </button>
+
+            </article>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <section class="stats-row">
+
+        <div class="stat-card">
+
+            <span>
+                BEST DROP
+            </span>
+
+            <strong id="bestDrop">
+                0.00
+            </strong>
 
         </div>
 
 
-        <section class="stats-row">
+        <div class="stat-card">
 
-            <div class="stat-card">
-                <span>BEST DROP</span>
-                <strong id="bestDrop">0.00</strong>
-            </div>
+            <span>
+                CASES OPENED
+            </span>
 
-            <div class="stat-card">
-                <span>CASES OPENED</span>
-                <strong id="casesOpened">0</strong>
-            </div>
+            <strong id="casesOpened">
+                0
+            </strong>
 
-            <div class="stat-card">
-                <span>UPGRADES WON</span>
-                <strong id="upgradesWon">0 / 0</strong>
-            </div>
-
-            <div class="stat-card">
-                <span>ACCOUNT</span>
-                <strong id="accountStatus">GUEST</strong>
-            </div>
-
-        </section>
-
-    </section>
-
-
-    <!-- ========================= -->
-    <!-- OTHER PAGES -->
-    <!-- ========================= -->
-
-    <section id="wheel" class="page">
-        <div class="empty-page">
-            <h1>Wheel</h1>
-            <p>Coming later.</p>
         </div>
-    </section>
 
 
-    <section id="slots" class="page">
-        <div class="empty-page">
-            <h1>Slots</h1>
-            <p>Coming later.</p>
+        <div class="stat-card">
+
+            <span>
+                UPGRADES WON
+            </span>
+
+            <strong id="upgradesWon">
+                0 / 0
+            </strong>
+
         </div>
-    </section>
 
 
-    <section id="upgrader" class="page">
-        <div class="empty-page">
-            <h1>Upgrader</h1>
-            <p>Coming later.</p>
+        <div class="stat-card">
+
+            <span>
+                ACCOUNT
+            </span>
+
+            <strong id="accountStatus">
+                GUEST
+            </strong>
+
         </div>
+
     </section>
 
-
-    <section id="sell" class="page">
-        <div class="empty-page">
-            <h1>Sell</h1>
-            <p>Coming later.</p>
-        </div>
-    </section>
+</section>
 
 
-    <section id="stats" class="page">
-        <div class="empty-page">
-            <h1>Stats</h1>
-            <p>Coming later.</p>
-        </div>
-    </section>
+
+<!-- =========================
+     OTHER PAGES
+========================= -->
+
+<section id="wheel" class="page">
+
+    <div class="empty-page">
+
+        <h1>
+            Wheel
+        </h1>
+
+        <p>
+            Coming later.
+        </p>
+
+    </div>
+
+</section>
 
 
-    <section id="ranking" class="page">
-        <div class="empty-page">
-            <h1>Ranking</h1>
-            <p>Coming later.</p>
-        </div>
-    </section>
+<section id="slots" class="page">
+
+    <div class="empty-page">
+
+        <h1>
+            Slots
+        </h1>
+
+        <p>
+            Coming later.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="upgrader" class="page">
+
+    <div class="empty-page">
+
+        <h1>
+            Upgrader
+        </h1>
+
+        <p>
+            Coming later.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="sell" class="page">
+
+    <div class="empty-page">
+
+        <h1>
+            Sell
+        </h1>
+
+        <p>
+            Coming later.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="stats" class="page">
+
+    <div class="empty-page">
+
+        <h1>
+            Stats
+        </h1>
+
+        <p>
+            Coming later.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="ranking" class="page">
+
+    <div class="empty-page">
+
+        <h1>
+            Ranking
+        </h1>
+
+        <p>
+            Coming later.
+        </p>
+
+    </div>
+
+</section>
+
 
 </main>
 
 
-<!-- ========================= -->
-<!-- AUTH MODAL -->
-<!-- ========================= -->
+
+<!-- =========================
+     AUTH MODAL
+========================= -->
 
 <div id="authModal" class="modal hidden">
 
     <div class="modal-overlay"></div>
+
 
     <div class="auth-box">
 
@@ -376,7 +716,15 @@
 
 
         <div class="auth-logo">
-            <span>MINE</span><strong>BLING</strong>
+
+            <span>
+                MINE
+            </span>
+
+            <strong>
+                BLING
+            </strong>
+
         </div>
 
 
@@ -399,11 +747,13 @@
         </div>
 
 
+
         <!-- LOGIN -->
 
         <form id="loginForm" class="auth-form">
 
             <label>
+
                 EMAIL
 
                 <input
@@ -412,10 +762,12 @@
                     placeholder="you@example.com"
                     required
                 >
+
             </label>
 
 
             <label>
+
                 PASSWORD
 
                 <input
@@ -424,21 +776,30 @@
                     placeholder="Your password"
                     required
                 >
+
             </label>
 
 
-            <button class="auth-submit" type="submit">
+            <button
+                class="auth-submit"
+                type="submit"
+            >
                 LOGIN
             </button>
 
         </form>
 
 
+
         <!-- REGISTER -->
 
-        <form id="registerForm" class="auth-form hidden">
+        <form
+            id="registerForm"
+            class="auth-form hidden"
+        >
 
             <label>
+
                 USERNAME
 
                 <input
@@ -449,10 +810,12 @@
                     placeholder="Player123"
                     required
                 >
+
             </label>
 
 
             <label>
+
                 EMAIL
 
                 <input
@@ -461,10 +824,12 @@
                     placeholder="you@example.com"
                     required
                 >
+
             </label>
 
 
             <label>
+
                 PASSWORD
 
                 <input
@@ -474,33 +839,46 @@
                     placeholder="Minimum 6 characters"
                     required
                 >
+
             </label>
 
 
             <div class="starter-coins">
-                NEW ACCOUNT BONUS
+
+                <span>
+                    STARTING BALANCE
+                </span>
 
                 <strong>
                     100 COINS
                 </strong>
+
             </div>
 
 
-            <button class="auth-submit" type="submit">
+            <button
+                class="auth-submit"
+                type="submit"
+            >
                 CREATE ACCOUNT
             </button>
 
         </form>
 
 
-        <p id="authMessage" class="auth-message"></p>
+        <p
+            id="authMessage"
+            class="auth-message"
+        ></p>
 
     </div>
 
 </div>
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="script.js"></script>
 
 </body>
